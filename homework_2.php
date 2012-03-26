@@ -13,8 +13,6 @@ function find_3_prime() {
  $counter = 0;
  foreach($home as $value) {
   $prime = true;
- if($counter == 3)
-    break;
 for($i = 2; $i <= sqrt($value); $i++) {
 if($value % $i == 0) {
 	$prime = false;
@@ -22,8 +20,11 @@ if($value % $i == 0) {
 	}	
 }
 if($prime) {
-echo "$value ";
 $counter++;
+if($counter == 3) {
+	echo "$value\n";
+	break;
+	}
 }
 }
 echo "\n";
